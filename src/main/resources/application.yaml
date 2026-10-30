@@ -1,6 +1,6 @@
 app:
   cors:
-    allowed=origins: "http://localhost:5173"
+    allowed-origins: "http://localhost:5173"
 
 spring:
   security:
@@ -14,15 +14,14 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: {"baseurl}/login/oauth2/code/{registrationId}"
-
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
           github:
             client-id: Ov23liSjr5brHw03nQsp
             client-secret: 5073da514a46ca2ed3e8031bfbe8cda1f049ca8e
             scope:
               - read:user
-              - user.email
-            redirect-url: {"baseurl}/login/oauth2/code/{registrationId}"
+              - user:email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
   datasource:
     url: jdbc:mysql://localhost:3306/oauth
     driver-class-name: com.mysql.cj.jdbc.Driver
